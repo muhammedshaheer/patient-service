@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Patient Details</title>
+    <link rel="stylesheet" th:href="@{/css/edit-patient.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}" type="text/css"/>
+</head>
+<body>
+<div class="links">
+    <div class="link"><a href="/">
+        <button class="btn btn-blue">Home</button>
+    </a></div>
+    <div class="link"><a href="/patients-add">
+        <button class="btn btn-blue">Add Patient</button>
+    </a></div>
+</div>
+<div class="edit-section">
+    <h2 class="title">Edit Patient Details</h2>
+    <div th:switch="${patient}">
+        <h4 class="title" th:unless="${patient}">No Records found!!!</h4>
+        <div th:if="${patient}">
+            <span class="error-message" th:if="${error !=null}">[[${error}]]</span>
+            <form class="edit-section-form" th:action="@{/patients/update/{id}(id=${patient.id})}" method="post">
+                <input type="text" name="fullName" id="fullName" th:value="${patient.fullName}" placeholder="FullName"/>
+                <select name="gender" id="gender">
+                    <option value="Male" th:selected="${patient.gender != null && patient.gender == 'Male'}">Male
+                    </option>
+                    <option value="Female" th:selected="${patient.gender != null && patient.gender == 'Female'}">Female
+                    </option>
+                    <option value="Others" th:selected="${patient.gender != null && patient.gender == 'Others'}">Others
+                    </option>
+                </select>
+                <input type="text" name="phoneNumber" th:value="${patient.phoneNumber}" placeholder="PhoneNumber"/>
+                <input class="btn-edit-record" type="submit" value="Update Record">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.title {
+    text-align: center;
+}
+
+.edit-section {
+    border: 1px solid #cccccc;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.edit-section-form {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-section-form .btn-edit-record {
+    margin-left: 5rem;
+}
+
+.edit-section-form input,select {
+    padding: 0.5rem;
+    margin: 0.25rem;
+    width: 20%;
+}

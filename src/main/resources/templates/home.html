@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}" type="text/css"/>
+</head>
+<body>
+<div class="links">
+    <div class="link"><a href="/">
+        <button class="btn btn-blue">Home</button>
+    </a></div>
+    <div class="link"><a href="/patients-add">
+        <button class="btn btn-blue">Add Patient</button>
+    </a></div>
+</div>
+
+<div class="table-section">
+    <h2 class="title">Patient Records</h2>
+    <div th:switch="${patients}">
+        <form class="search-record" th:action="@{/(keyword='keyword')}">
+            <input class="input-search-record" type="text" name="keyword" id="keyword" placeholder="Search"/>
+            <input class="btn-search-record" type="submit" value="Search">
+        </form>
+        <h4 class="title" th:if="${#arrays.isEmpty(patients)}">No Records found!!!</h4>
+        <div th:unless="${#arrays.isEmpty(patients)}">
+            <table class="table-wrapper">
+                <tr>
+                    <th class="table-head">Name</th>
+                    <th class="table-head align-center">Gender</th>
+                    <th class="table-head align-center">PhoneNumber</th>
+                    <th class="table-head"></th>
+                    <th class="table-head"></th>
+                    <th class="table-head"></th>
+                </tr>
+
+                <tr th:each="patient:${patients}">
+                    <td class="table-data table-name">[[${patient.fullName}]]</td>
+                    <td class="table-data table-gender align-center">[[${patient.gender}]]</td>
+                    <td class="table-data table-number align-center">[[${patient.phoneNumber}]]</td>
+                    <td class="table-data table-number table-data-align">
+                        <a th:href="@{/patients/edit/{id}(id=${patient.id})}">
+                            <button class="btn btn-gray">Edit</button>
+                        </a>
+                    </td>
+                    <td class="table-data table-number table-data-align">
+                        <form class="delete-section" th:action="@{/patients/delete/{id}(id=${patient.id})}"
+                              method="post">
+                            <input class="btn btn-danger" type="submit" value="Delete"/>
+                        </form>
+                    </td>
+                    <td class="table-data table-number table-data-align"><a
+                            th:href="@{/patients/{id}(id=${patient.id})}">View
+                        Details</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

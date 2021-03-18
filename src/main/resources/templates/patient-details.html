@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Patient Details</title>
+    <link rel="stylesheet" th:href="@{/css/patient-details.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}" type="text/css"/>
+</head>
+<body>
+<div class="links">
+    <div class="link"><a href="/">
+        <button class="btn btn-blue">Home</button>
+    </a></div>
+    <div class="link"><a href="/patients-add">
+        <button class="btn btn-blue">Add Patient</button>
+    </a></div>
+</div>
+<div class="patient-details-view">
+    <h2 class="title">Patient Details</h2>
+    <div th:switch="${patient}">
+        <h4 class="title" th:unless="${patient}">No Records found!!!</h4>
+        <div th:if="${patient}">
+            <table class="patient-details-table-section">
+                <tr>
+                    <td class="heading">Name</td>
+                    <td>[[${patient.fullName}]]</td>
+                </tr>
+                <tr>
+                    <td class="heading">Gender</td>
+                    <td>[[${patient.gender}]]</td>
+                </tr>
+                <tr>
+                    <td class="heading">PhoneNumber</td>
+                    <td>[[${patient.phoneNumber}]]</td>
+                </tr>
+            </table>
+            <div class="action-center">
+                <a th:href="@{/patients/edit/{id}(id=${patient.id})}">
+                    <button class="btn btn-gray">Edit</button>
+                </a>
+                <form class="delete-section" th:action="@{/patients/delete/{id}(id=${patient.id})}" method="post">
+                    <input class="btn btn-danger" type="submit" value="Delete"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

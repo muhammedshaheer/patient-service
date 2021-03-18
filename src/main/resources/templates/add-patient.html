@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/add-patient.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}" type="text/css"/>
+</head>
+<body>
+<div class="links">
+    <div class="link"><a href="/">
+        <button class="btn btn-blue">Home</button>
+    </a></div>
+    <div class="link"><a href="/patients-add">
+        <button class="btn btn-blue">Add Patient</button>
+    </a></div>
+</div>
+
+<div class="add-section">
+    <h2 class="title">Add New Patient Details</h2>
+    <span class="error-message" th:if="${error !=null}">[[${error}]]</span>
+    <form class="add-section-form" action="/patients/add" method="post">
+        <input type="text" name="fullName" id="fullName" th:value="${patient != null ? patient.fullName : ''}"
+               placeholder="FullName"/>
+        <select name="gender" id="gender">
+            <option value="MALE" th:selected="${patient != null && patient.gender != null && patient.gender == 'Male'}">
+                Male
+            </option>
+            <option value="FEMALE"
+                    th:selected="${patient != null && patient.gender != null && patient.gender == 'Female'}">Female
+            </option>
+            <option value="OTHERS"
+                    th:selected="${patient != null && patient.gender != null && patient.gender == 'Others'}">Others
+            </option>
+        </select>
+        <input type="text" name="phoneNumber" th:value="${patient != null ? patient.phoneNumber : ''}"
+               placeholder="PhoneNumber (9847012345)"/>
+        <input class="btn-add-record" type="submit" value="Add Record">
+    </form>
+</div>
+</body>
+</html>

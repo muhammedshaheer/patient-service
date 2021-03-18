@@ -1,0 +1,51 @@
+body {
+    font-family: system-ui, sans-serif;
+    width: 75%;
+    margin: auto;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    padding: 0.25rem 0.5rem;
+}
+
+.patient-details-view {
+    width: 70%;
+    margin: auto;
+}
+
+.patient-details-view .title {
+    text-align: center;
+}
+
+.patient-details-table-section {
+    display: table;
+    width: 100%;
+}
+
+.patient-details-table-section .heading {
+    font-weight: 700;
+}
+
+.patient-details-table-section td {
+    border: 1px solid #eeeeee;
+    text-align: left;
+    padding: 0.5rem;
+    width: 50%;
+}
+
+.action-center {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.action-center input,button {
+    padding: 0.5rem;
+    width: 6rem;
+    margin: 0.25rem;
+}

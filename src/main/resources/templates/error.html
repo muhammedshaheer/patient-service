@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" th:href="@{/css/error.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}" type="text/css"/>
+</head>
+<body>
+<div class="links">
+    <div class="link"><a href="/">
+        <button class="btn btn-blue">Home</button>
+    </a></div>
+    <div class="link"><a href="/patients-add">
+        <button class="btn btn-blue">Add Patient</button>
+    </a></div>
+</div>
+<div class="error-wrapper">
+    <h2 class="title">Error Occurred!!!</h2>
+    <h4 class="title">[[${exception}]]</h4>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    font-family: system-ui, sans-serif;
+    width: 75%;
+    margin: auto;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.link {
+    padding: 0.25rem 0.5rem;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    min-width: 6rem;
+    margin: 0.25rem;
+}
+
+.btn-success {
+    background-color: #4CAF50;
+} /* Green */
+
+.btn-blue {
+    background-color: #008CBA;
+} /* Blue */
+
+.btn-danger {
+    background-color: #f44336;
+} /* Red */
+
+.btn-gray {
+    background-color: #e7e7e7; color: black;
+} /* Gray */
+
+.btn-black {
+    background-color: #555555;
+} /* Black */
+
+.error-message {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.align-center {
+    text-align: center;
+}
