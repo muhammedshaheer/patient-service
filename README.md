@@ -19,4 +19,14 @@ Developed using Java Spring Boot and Thymeleaf
 7. Run this link in your browser
    
     ```http://localhost:9090```
+
+8. You can also run without help of an IDE 
+   
+    a. Open a command prompt in the root directory of this application
+    
+    b. Run the command 
+   ```
+   mvn clean install
+   java -jar target/patient-service-0.0.1-SNAPSHOT.jar
+    ```
    
