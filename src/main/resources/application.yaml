@@ -5,3 +5,8 @@ spring:
       database: patientDB
       auto-index-creation: true
       authentication-database: admin
+  application:
+    name: patient-service
+
+server:
+  port: 9090
