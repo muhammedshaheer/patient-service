@@ -9,8 +9,9 @@ Developed using Java Spring Boot and Thymeleaf
 ### Run this application
 1. Clone this repository
 2. Run the below command to setup mongodb with docker
-   
-    ```docker-compose up```
+    ```
+    docker-compose up
+   ```
     
 3. If you have mongodb in local system then that would be fine
 4. If you are running with help of Intellij IDEA/Eclipse/STS, then import this project to your IDE
@@ -18,7 +19,9 @@ Developed using Java Spring Boot and Thymeleaf
 6. The application will run on port 9090
 7. Run this link in your browser
    
-    ```http://localhost:9090```
+    ```
+    http://localhost:9090
+   ```
 
 8. You can also run without help of an IDE 
    
