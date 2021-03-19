@@ -33,3 +33,16 @@ Developed using Java Spring Boot and Thymeleaf
    java -jar target/patient-service-0.0.1-SNAPSHOT.jar
     ```
    
+9.  You can also run with help of docker
+    
+    a. We have Dockerfile in the root directory
+    
+    b. Build docker image using the below command
+    ```
+    docker build -t patient-service .
+    ```
+    
+    c. Run the docker image using below command
+    ```
+    docker run -d --name patient-service -p 9090:9090 patient-service 
+    ```
